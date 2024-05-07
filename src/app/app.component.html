@@ -27,16 +27,11 @@
     </thead>
 
     <tbody>
-      <tr >
-        <td> Id </td>
-        <td> Author </td>
-        <td> Música </td>
-        <td>
-          <span > alterar </span>
-          <span > remover </span>
-        </td>
+      <tr *ngFor="let musica of musicas">
+        <td>{{ musica.id }}</td>
+        <td>{{ musica.author }}</td>
+        <td>{{ musica.text }}</td>
       </tr>
-
     </tbody>
   </table>
 </div>
