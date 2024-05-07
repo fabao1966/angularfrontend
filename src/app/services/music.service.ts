@@ -8,9 +8,14 @@ import { Music } from "../models/music.model";
 
 export class MusicService{
   private httpCliente = inject(HttpClient);
-  private url = environment.apiUrl;
+  private url = `${environment.apiUrl}musics`;
 
   obterMusicas(){
-    return this.httpCliente.get<Music[]>(this.url + 'musics');
+    return this.httpCliente.get<Music[]>(this.url);
   }
+
+  cadastrarMusica(musica: Music){
+    return this.httpCliente.post<Music>(this.url, musica);
+  }
+
 }
