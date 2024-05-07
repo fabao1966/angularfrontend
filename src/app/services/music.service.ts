@@ -8,7 +8,7 @@ import { Music } from "../models/music.model";
 
 export class MusicService{
   private httpCliente = inject(HttpClient);
-  private url = environment.api;
+  private url = environment.apiUrl;
 
   obterMusicas(){
     return this.httpCliente.get<Music[]>(this.url + 'musics');
